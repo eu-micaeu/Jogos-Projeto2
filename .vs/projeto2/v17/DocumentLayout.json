@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\micae\\projeto2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{88EA6238-D8DC-C965-2B38-E022C66A3CA7}|Assembly-CSharp.csproj|c:\\users\\micae\\projeto2\\assets\\scriptnpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{88EA6238-D8DC-C965-2B38-E022C66A3CA7}|Assembly-CSharp.csproj|solutionrelative:assets\\scriptnpc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "scriptNpc.cs",
+              "DocumentMoniker": "C:\\Users\\micae\\projeto2\\Assets\\scriptNpc.cs",
+              "RelativeDocumentMoniker": "Assets\\scriptNpc.cs",
+              "ToolTip": "C:\\Users\\micae\\projeto2\\Assets\\scriptNpc.cs",
+              "RelativeToolTip": "Assets\\scriptNpc.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAkwC0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T02:42:24.752Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
