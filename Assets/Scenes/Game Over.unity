@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 135649595}
   - component: {fileID: 135649594}
   m_Layer: 5
-  m_Name: btnReinicar
+  m_Name: btnReiniciar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -118}
+  m_AnchoredPosition: {x: 0, y: 68}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135649594
@@ -668,7 +668,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -177}
+  m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1217531141
@@ -859,7 +859,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -6}
+  m_AnchoredPosition: {x: 0, y: 139}
   m_SizeDelta: {x: 373.7412, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1652915031
@@ -1210,11 +1210,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1858908290}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e2d2d25a07b864cabbd21d1f1cba7c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7235428eb95cfe2b693f730022414a96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   btnSair: {fileID: 1217531139}
-  btnIniciar: {fileID: 135649592}
+  btnReiniciar: {fileID: 135649592}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
