@@ -13,19 +13,24 @@ public class scriptPc : MonoBehaviour
     public GameObject cabeca;
     public LayerMask mascara;
     public float dist;
-    private AudioSource som;
+    public AudioSource som1; 
+    public AudioSource som2;
+    public AudioSource som3;
     public TextMeshProUGUI textoPontos; 
+    public TextMeshProUGUI textoMunicao; 
 
     private int pontos = 0;
+    private int municaoAtual = 10; 
+    private int tamanhoCarregador = 10; 
 
     void Start()
     {
         rbd = GetComponent<Rigidbody>();
-        som = GetComponent<AudioSource>();
         rotIni = transform.localRotation;
         dist = 100;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        AtualizarTextoMunicao();
     }
 
     void Update()
@@ -34,6 +39,11 @@ public class scriptPc : MonoBehaviour
         RotacaoCamera();
         Interacao();
         LimiteMapa();
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Recarregar();
+        }
     }
 
     void Movimentacao()
@@ -49,10 +59,8 @@ public class scriptPc : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * sensibilidadeMouse * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensibilidadeMouse * Time.deltaTime;
 
-        // RotaÁ„o horizontal (giro do personagem)
         transform.Rotate(Vector3.up * mouseX);
 
-        // RotaÁ„o vertical (c‚mera)
         rotacaoY -= mouseY;
         rotacaoY = Mathf.Clamp(rotacaoY, -90f, 90f);
 
@@ -63,9 +71,35 @@ public class scriptPc : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            som.Play();
+            if (municaoAtual > 0)
+            {
+                Atirar();
+            }
+            else
+            {
+                Debug.Log("Sem muni√ß√£o! Recarregue pressionando 'R'.");
+            }
+        }
+    }
 
-            if (Physics.Raycast(cabeca.transform.position, cabeca.transform.forward, out RaycastHit hit, dist, mascara))
+    void Atirar()
+    {
+        som1.Play();
+        municaoAtual--; 
+        AtualizarTextoMunicao(); 
+
+        if (Physics.Raycast(cabeca.transform.position, cabeca.transform.forward, out RaycastHit hit, dist, mascara))
+        {
+            if (hit.collider.CompareTag("Npc"))
+            {
+                scriptNpc npc = hit.collider.GetComponent<scriptNpc>();
+                if (npc != null)
+                {
+                    npc.Destruir();
+                    AdicionarPontos(1);
+                }
+            }
+            else
             {
                 Rigidbody rbd = hit.collider.GetComponent<Rigidbody>();
                 if (rbd != null)
@@ -88,20 +122,36 @@ public class scriptPc : MonoBehaviour
         }
     }
 
-    // MÈtodo para adicionar pontos
     public void AdicionarPontos(int quantidade)
     {
         pontos += quantidade;
-        textoPontos.text = "Pontos: " + pontos.ToString(); // Atualiza o texto da UI sempre que os pontos mudam
+        textoPontos.text = "Pontos: " + pontos.ToString(); 
     }
 
-    // MÈtodo para detectar colis„o com objetos com a tag "Ponto"
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ponto"))
         {
+            som2.Play();
             Destroy(collision.gameObject);
-            AdicionarPontos(1); // Adiciona 1 ponto ao destruir o objeto
+            AdicionarPontos(1); 
         }
+        if (collision.gameObject.CompareTag("PowerUp"))
+        {
+            som3.Play();
+            Destroy(collision.gameObject);
+            Recarregar(); 
+        }
+    }
+
+    void Recarregar()
+    {
+        municaoAtual = tamanhoCarregador;
+        AtualizarTextoMunicao();
+    }
+
+    void AtualizarTextoMunicao()
+    {
+        textoMunicao.text = "Muni√ß√£o: " + municaoAtual.ToString() + "/" + tamanhoCarregador.ToString();
     }
 }

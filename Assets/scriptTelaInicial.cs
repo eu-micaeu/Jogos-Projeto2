@@ -14,7 +14,6 @@ public class scriptTelaInicial : MonoBehaviour
         btnIniciar.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnIniciarClick);
     }
 
-    // Update is called once per frame
     void Update()
     {
 

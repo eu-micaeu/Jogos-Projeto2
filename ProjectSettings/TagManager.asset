@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ponto
   - Pc
+  - Npc
+  - PowerUp
   layers:
   - Default
   - TransparentFX

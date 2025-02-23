@@ -10,23 +10,8 @@ public class scriptGameOver : MonoBehaviour
 
     void Start()
     {
-        if (btnSair == null)
-        {
-            Debug.LogError("btnSair is not assigned in the Inspector!");
-        }
-        else
-        {
-            btnSair.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnSairClick);
-        }
-
-        if (btnReiniciar == null)
-        {
-            Debug.LogError("btnReiniciar is not assigned in the Inspector!");
-        }
-        else
-        {
-            btnReiniciar.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnIniciarClick);
-        }
+    	btnSair.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnSairClick);
+        btnReiniciar.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnIniciarClick);
     }
 
     void OnSairClick()

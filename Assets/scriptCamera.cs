@@ -16,7 +16,7 @@ public class scriptCamera : MonoBehaviour
 
     }
 
-    // Update is called once per frame  
+
     void Update()
     {
         countX += Input.GetAxisRaw("Mouse Y") * Time.deltaTime * velRotX;
