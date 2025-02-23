@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class scriptPc : MonoBehaviour
 {
@@ -44,6 +45,11 @@ public class scriptPc : MonoBehaviour
         {
             Recarregar();
         }
+        
+        if (pontos >= 40)
+        {
+	    SceneManager.LoadScene("Game Over");
+        }
     }
 
     void Movimentacao()
@@ -77,7 +83,7 @@ public class scriptPc : MonoBehaviour
             }
             else
             {
-                Debug.Log("Sem munição! Recarregue pressionando 'R'.");
+                Debug.Log("Sem munição!");
             }
         }
     }
@@ -96,7 +102,6 @@ public class scriptPc : MonoBehaviour
                 if (npc != null)
                 {
                     npc.Destruir();
-                    AdicionarPontos(1);
                 }
             }
             else
